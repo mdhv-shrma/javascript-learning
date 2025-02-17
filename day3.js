@@ -80,6 +80,35 @@ shallowcopy.details.age = 21;
 console.log(original)
 console.log(original.details)
 
+//higher order fxns
+//1. fxn as argument
+function greet(name, formatter) {
+    return formatter(name);
+}
+
+function toUpperCase(str) {
+    return str.toUpperCase();
+}
+
+console.log(greet("Madhav", toUpperCase));
+
+//2 fxn as return value
+function multiplier(factor) {
+    return function (number) {
+        return number * factor;
+    };
+}
+
+const double = multiplier(2);
+console.log(double(5)); //it remembers factor due to closure property
+
+
+//foreach loop
+const arr1 = [1, 2, 3, 4];
+
+arr1.forEach((num, index) => {
+    console.log(`Index: ${index}, Value: ${num}`);
+});
 
 
 
