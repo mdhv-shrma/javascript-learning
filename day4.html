@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body style="background-color: blue;">
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button id="clickBtn">Click Me</button>
+
+    <script>
+        //Event Listener
+        const button = document.getElementById("clickBtn");
+        // Adding an event listener for the 'click' event
+        button.addEventListener("click", function() {
+            alert("Button clicked!");
+        });
+
+        //Event Delegation
+        const list = document.getElementById("list");  
+        // Adding an event listener to the parent <ul>
+        list.addEventListener("click", function(event) {
+            if (event.target.tagName === "LI") {
+                alert("You clicked on " + event.target.innerText);
+            }
+        });
+    </script>
+</body>
+</html>

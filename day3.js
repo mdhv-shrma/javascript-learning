@@ -82,7 +82,7 @@ console.log(original.details)
 
 //higher order fxns
 //1. fxn as argument
-function greet(name, formatter) {
+function greeting(name, formatter) {
     return formatter(name);
 }
 
@@ -90,7 +90,7 @@ function toUpperCase(str) {
     return str.toUpperCase();
 }
 
-console.log(greet("Madhav", toUpperCase));
+console.log(greeting("Madhav", toUpperCase));
 
 //2 fxn as return value
 function multiplier(factor) {
@@ -110,6 +110,13 @@ arr1.forEach((num, index) => {
     console.log(`Index: ${index}, Value: ${num}`);
 });
 
+const arr3=[1,2,3,4,5];
+const arr4=arr3;
+arr4[0]=0;
+console.log(arr3);
+const arr5=structuredClone(arr3);
+arr5[0]=4;
+console.log(arr3)
 
 
 
